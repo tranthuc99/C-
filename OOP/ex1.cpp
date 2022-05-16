@@ -138,10 +138,10 @@ public:
         {
             if (input == ds[i]->getHoTen())
             {
-            cout << i+1 << ". " << ds[i]->getHoTen() << ", " << ds[i]->getTuoi() \
-            << ", " << ds[i]->getGioiTinh() << ", " << ds[i]->getDiaChi() << ", " \
-            << ds[i]->getBac() << ", " << ds[i]->getNganhDT() << ", " << ds[i]->getCongViec() <<endl;
-            // printf("abc %s", ds[i]->getHoTen());
+            // cout << i+1 << ". " << ds[i]->getHoTen() << ", " << ds[i]->getTuoi() \
+            // << ", " << ds[i]->getGioiTinh() << ", " << ds[i]->getDiaChi() << ", " \
+            // << ds[i]->getBac() << ", " << ds[i]->getNganhDT() << ", " << ds[i]->getCongViec() <<endl;
+            printf("abc %c", ds[i]->getHoTen());
             }
         }
     }

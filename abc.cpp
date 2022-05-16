@@ -1,12 +1,21 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main()
 {
-	int tuoi = 23;
-	string ten = "Thuc";
-	printf("toi ten la %s, %d tuoi", ten, tuoi);
+	int maTaiLieu;
+    string nhaXuatBan;
+    int banPhatHanh;
+
+    cout << "Nhap ma tai lieu: ";
+	cin >> maTaiLieu;
+	cout << "Nhap nha xuat ban: ";
+	cin.ignore();
+    getline(cin, nhaXuatBan);
+	// fflush(stdin);
+    cout << "Nhap so ban phat hanh: ";
+	cin >> banPhatHanh;
 
 	return 0;
 }
