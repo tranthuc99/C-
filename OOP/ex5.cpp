@@ -50,7 +50,7 @@ protected:
     vector<khachSan> ds;
 public:
     void addNew();
-    khachSan(int snt, phong room, string ht, int t, int cmt);
+    khachSan(int snt = 0, phong room = new phong, string ht = "Thuc", int t = 18, int cmt = 123);
 };
 
 void khachSan::addNew()
