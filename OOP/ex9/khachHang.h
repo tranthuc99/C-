@@ -11,16 +11,23 @@ private:
     int maSo;
 public:
     string printKH();
+    int getMaSo();
     string getHoTen();
     int getSoNha();
     void setHoTen(string);
     void setSoNha(int);
-    khachHang(string ht, int sn, int ms);
+    khachHang(string ht, int sn);
 };
 
 string khachHang::printKH()
 {
-    return hoTen + ", " + to_string(soNha) + to_string(maSo);
+    return "Ho ten: " + hoTen + ", So nha: " + to_string(soNha) + \
+            ", Ma so cong to dien: " + to_string(maSo);
+}
+
+int khachHang::getMaSo()
+{
+    return maSo;
 }
 
 string khachHang::getHoTen()
@@ -40,9 +47,13 @@ void khachHang::setSoNha(int sn)
     this->soNha = sn;
 }
 
-khachHang::khachHang(string ht, int sn, int ms)
-    : hoTen(ht), soNha(sn), maSo(ms)
-{}
+int ms = 1;
+khachHang::khachHang(string ht, int sn)
+    : hoTen(ht), soNha(sn)
+{
+    this->maSo = ms;
+    ms++;
+}
 
 
 

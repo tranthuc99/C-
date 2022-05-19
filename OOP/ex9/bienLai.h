@@ -1,25 +1,37 @@
 #ifndef bienLai_h
 #define bienLai_h
 #include <iostream>
-#include "khachHang.h"
 
 using namespace std;
 
 class bienLai
 {
 private:
-    khachHang kh;
     int soCu;
     int soMoi;
+    int tienDien;
+    int maSo;
 public:
-    bienLai(int sc, int sm, khachHang kh);
+    string printBienLai();
+    void tinhTienDien();
+    bienLai(int sc, int sm, int ms);
 };
 
-bienLai::bienLai(int sc, int sm, khachHang kh)
+string bienLai::printBienLai()
 {
-    this->kh = kh;
-    this->soCu = sc;
-    this->soMoi = sm;
+    return "So cu: " + to_string(soCu) + ", So moi: " \
+    + to_string(soMoi) + ", Tien dien: " + to_string(tienDien);
+}
+
+void bienLai::tinhTienDien()
+{
+    tienDien = 5 * (soMoi - soCu);
+}
+
+bienLai::bienLai(int sc, int sm, int ms)
+    : soCu(sc), soMoi(sm), maSo(ms)
+{
+    this->tinhTienDien();
 }
 
 
