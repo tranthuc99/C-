@@ -1,47 +1,48 @@
-#include<iostream>
-using namespace std;
-
-class ShopItem
-{
-    int id;
-    int price;
-    public:
-        void setData(int a, int b){
-            id = a;
-            price = b;
-        }
-        void getData(void){
-            cout<<"Code of this item is "<< id<<endl;
-            cout<<"Price of this item is "<<price<<endl;
-        }
-};
-
-
-int main(){
-    int size = 4;
-    ShopItem *ptr[size];
-    delete []ptr;
-    int p, q;
-    for (int i = 0; i < size; i++)
-    {
-        cout << ptr[i] << endl;
-        // cout<<"Enter Id and price of item "<< i+1<<endl;
-        // cout << "Id= "; cin >> p;
-        // cout << "price = "; cin >> q;
-        // // ptr->setData(p, q);
-        // ptr[i]->setData(p, q);
-        // // ptr++;
-    }
-
-
-    // for (int i = 0; i < size; i++)
-    // {
-    //     cout<<"Item number: "<<i+1<<endl;
-    //     // ptr->getData();
-    //     ptr[i]->getData();
-    //     // ptr++;
-    // }
-    
-    
-    return 0;
-}
+#include <iostream>  
+using namespace std;  
+  
+class Parent {  
+    private:  
+        int id;  
+          
+    public:  
+        void showid ()  
+        {  
+            cout << " I am in the Parent class " << endl;  
+            }     
+};  
+  
+class Myson : public Parent {  
+    public:  
+        void disp ()  
+        {  
+            cout << " I am in the Myson class " << endl;  
+        }  
+};  
+  
+int main ( int argc, char * argv[])  
+{  
+    // create object of the Parent class  
+    Parent par_obj;  
+      
+    // create object of the Myson class  
+    Myson my_obj;  
+      
+    // upcast - here upcasting can be done implicitly  
+    Parent *ptr1 = &my_obj; // base class's reference the derive class's object  
+      
+    // downcast - here typecasting is done explicitly   
+    Myson *ptr2 = (Myson *) &par_obj;  
+      
+    // Upcasting is safe:  
+    ptr1->showid();  
+    ptr2->showid();  
+      
+      
+    // downcasting is unsafe:  
+    ptr2->disp();  
+      
+    getchar();  
+    return 0;  
+      
+}  
